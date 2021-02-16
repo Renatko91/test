@@ -1,27 +1,23 @@
 <#import "part/common.ftlh" as c>
 <#import "part/form.ftlh" as f>
 
-<h1>Список юзеров</h1>
+<h1>Список сообщений</h1>
 <@c.page>
-<#list users as user>
+<#list messages as message>
 <div>
-    <b>${user.id}</b>
-    <span>${user.name}</span>
+    <b>${message.id}</b>
+    <span>${message.text}</span>
     <form action="/delete" method="post">
-        <input type="hidden" name="del_user" value=${user.name} />
+        <input type="hidden" name="text" value=${message.text} />
         <input type = "submit" value = "Удалить">
-    </form>
-    <form action="/update" method="post">
-        <input type="hidden" name="del_user" value=${user.name} />
-        <input type = "submit" value = "Изменить">
     </form>
 </div>
 <#else>
-No user
+No message
 </#list>
 </@c.page>
 
 </br>
-<h1>Отправьте данные</h1>
+<h1>Создать сообщение</h1>
 <@f.form "/create">
 </@f.form>
