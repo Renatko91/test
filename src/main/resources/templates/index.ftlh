@@ -9,7 +9,7 @@
     <span>${message.text}</span>
     <form action="/delete" method="post">
         <input type="hidden" name="text" value=${message.text} />
-        <input type = "submit" value = "Удалить">
+        <input type = "submit" value = "Удалить" />
     </form>
 </div>
 <#else>

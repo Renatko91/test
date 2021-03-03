@@ -1,10 +1,6 @@
 package sprint.test.entity;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.Collection;
 
 public class Message {
     @Id
