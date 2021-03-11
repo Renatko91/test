@@ -1,6 +1,6 @@
-<#macro form path>
+<#macro form path name inptype inpname inpvalue>
     <form action=${path} method="post">
-        <input type = "text"  name = "text" />
-        <input type = "submit" name = "submit" value = "Отправить" />
+        <input type = ${inptype}  name = ${inpname}  value = ${inpvalue} >
+        <input type = "submit" value = ${name} >
     </form>
 </#macro>

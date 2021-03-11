@@ -10,29 +10,29 @@ import sprint.test.repository.MessageRepository;
 import java.util.List;
 
 @Controller
-public class MessageController {
+public class MainController {
 
     @Autowired
     MessageRepository messageRepository;
 
-    @GetMapping("/")
+    @GetMapping("/main")
     public String getAll(Model model) {
         List<Message> messages = messageRepository.getAll();
         model.addAttribute("messages", messages);
-        return "index";
+        return "main";
     }
 
     @PostMapping("/create")
-    public String add(@RequestParam String text, Model model) {
+    public String add(@RequestParam String text) {
         Message message = new Message();
         message.setText(text);
         messageRepository.addMessage(message);
-        return "redirect:/";
+        return "redirect:/main";
     }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam String text, Model model) {
+    public String delete(@RequestParam String text) {
         messageRepository.delMessage(text);
-        return "redirect:/";
+        return "redirect:/main";
     }
 }

@@ -7,17 +7,15 @@
 <div>
     <b>${message.id}</b>
     <span>${message.text}</span>
-    <form action="/delete" method="post">
-        <input type="hidden" name="text" value=${message.text} />
-        <input type = "submit" value = "Удалить" />
-    </form>
+    <@f.form "/delete" "Удалить" "hidden" "text" "${message.text}">
+    </@f.form>
 </div>
 <#else>
 No message
 </#list>
-</@c.page>
 
 </br>
 <h1>Создать сообщение</h1>
-<@f.form "/create">
+<@f.form "/create" "Отправить" "text" "text" "">
 </@f.form>
+</@c.page>
